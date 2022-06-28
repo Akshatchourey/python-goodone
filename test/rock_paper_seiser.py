@@ -27,7 +27,12 @@ def paper(w):
     w.end_fill()
 
 def seiser(w):
-    pass
+    f = w.forward
+    r = w.right
+    l = w.left
+    b.color("black", 'white')
+    f(380),r(90),f(380)
+    penup(),r(180),f(760),pendown(),l(90),f(360),l(90),f(360)
 
 def stone(w):
     f = w.forward
