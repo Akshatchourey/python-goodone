@@ -31,8 +31,8 @@ def seiser(w):
     r = w.right
     l = w.left
     b.color("black", 'white')
-    f(380),r(90),f(380)
-    penup(),r(180),f(760),pendown(),l(90),f(360),l(90),f(360)
+    l(45),f(340),r(90),f(24),r(90),f(80),r(45),f(15),l(45),f(249.3935),r(90),f(13.4)
+    r(90),f(140),w.penup(),l(135),f(140),r(180),w.pendown(),f(340),l(90),f(24),l(90),f(80),l(45),f(15),r(45),f(249.3935),l(90),f(13.4)
 
 def stone(w):
     f = w.forward
@@ -83,33 +83,33 @@ ch1 = random.randint(1, 3)
 
 if ch2 == 1:
     if ch1 == 2:
-        paper(a), seiser(b)
+        stone(a), paper(b)
         print('loos')
     elif ch1 == 1:
+        stone(a),stone(b)
+        print('tie')
+    else:
+        stone(a),seiser(b)
+        print('win')
+if ch2 == 2:
+    if ch1 == 3:
+        paper(a),seiser(b)
+        print('loos')
+    elif ch1 == 2:
         paper(a),paper(b)
         print('tie')
     else:
         paper(a),stone(b)
         print('win')
-if ch2 == 2:
-    if ch1 == 3:
+if ch2 == 3:
+    if ch1 == 1:
         seiser(a),stone(b)
         print('loos')
-    elif ch1 == 2:
+    elif ch1 == 3:
         seiser(a),seiser(b)
         print('tie')
     else:
         seiser(a),paper(b)
-        print('win')
-if ch2 == 3:
-    if ch1 == 1:
-        stone(a),paper(b)
-        print('loos')
-    elif ch1 == 3:
-        stone(a),stone(b)
-        print('tie')
-    else:
-        stone(a),seiser(b)
         print('win')
 
 turtle.done()
