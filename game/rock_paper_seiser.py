@@ -1,18 +1,21 @@
 import turtle
 import random
 
-print('ready to to loose \nleft is computer where right is human\nchose any one from the  three 1.stone, 2.paper and 3.seaser')
-ch2 = int(input("enter your choice:"))
+print("Ready to to loose")
+print("Left is computer where right is human")
+print("This game is going to be conducted three parts and best of three will be chosen.")
+print("chose any one from the three 1.stone, 2.paper and 3.seiser")
 turtle.Screen().bgcolor("yellow")
-
-# ch1=computer , b=computer
-# ch2=human , a=human
+    # ch1=computer, x=computer
+    # ch2=human, y=human
+y = turtle.Turtle()
+x = turtle.Turtle()
 
 def paper(w):
     f = w.forward
     r = w.right
     l = w.left
-    b.color("black", 'white')
+    x.color("black", 'white')
     w.begin_fill()
     l(90), f(25), r(90), f(25), l(90), f(25), r(90), f(25), l(90), f(25)
     r(90), f(50), l(90), f(25), r(90), f(25), l(90), f(25), r(90), f(50)
@@ -30,7 +33,7 @@ def seiser(w):
     f = w.forward
     r = w.right
     l = w.left
-    b.color("black", 'white')
+    x.color("black", 'white')
     l(45),f(340),r(90),f(24),r(90),f(80),r(45),f(15),l(45),f(249.3935),r(90),f(13.4)
     r(90),f(140),w.penup(),l(135),f(140),r(180),w.pendown(),f(340),l(90),f(24),l(90),f(80),l(45),f(15),r(45),f(249.3935),l(90),f(13.4)
 
@@ -48,68 +51,73 @@ def stone(w):
     r(90), f(87), r(90), f(16), l(90), f(58), r(90), f(16), l(90), f(58), r(90), f(16), l(90), f(58)
     w.end_fill()
 
-    w.penup(), r(180), f(290), b.pendown()
+    w.penup(), r(180), f(290), x.pendown()
     w.color("black", 'black')
     w.begin_fill()
     r(110), f(10), r(30), f(5), r(100), f(10), r(120), f(15)
     w.end_fill()
 
-    w.penup(), r(180), f(100), b.pendown()
+    w.penup(), r(180), f(100), x.pendown()
     w.color("black", 'black')
     w.begin_fill()
     r(110), f(10), r(30), f(5), r(120), f(10), r(100), f(15)
     w.end_fill()
 
-    w.penup(), r(90), f(130), b.pendown()
+    w.penup(), r(90), f(130), x.pendown()
     w.color("black", 'black')
     w.begin_fill()
     r(110), f(10), r(120), f(5), r(30), f(10), r(100), f(15)
     w.end_fill()
 
+def reset():
+    turtle.resetscreen()
+    turtle.bgcolor("yellow")
 
-a = turtle.Turtle()
-a.color("black", 'white')
-a.speed(70)
-a.hideturtle()
+    y.color("black", 'white')
+    y.speed(70)
+    y.hideturtle()
 
-b = turtle.Turtle()
-b.speed(70)
-b.penup()
-b.back(380)
-b.pendown()
-b.hideturtle()
+    x.speed(70)
+    x.penup()
+    x.back(380)
+    x.pendown()
+    x.hideturtle()
 
-ch1 = random.randint(1, 3)
 
-if ch2 == 1:
-    if ch1 == 2:
-        stone(a), paper(b)
-        print('loos')
-    elif ch1 == 1:
-        stone(a),stone(b)
+hum = com = 0
+onPaper = {1:stone, 2:paper, 3:seiser}
+
+for i in range(3):
+    ch2 = int(input("enter your choice:"))  # y is human
+    ch1 = random.randint(1, 3)   # x is computer
+    reset()
+    onPaper.get(ch2)(y)
+    onPaper.get(ch1)(x)
+    
+
+    if ch1 == ch2:
+        hum += 1
+        com += 1
         print('tie')
+    elif ch2 > ch1:
+        if ch2-ch1 == 1:
+            hum += 1
+            print("win")
+        else:
+            com += 1
+            print("loos")
     else:
-        stone(a),seiser(b)
-        print('win')
-if ch2 == 2:
-    if ch1 == 3:
-        paper(a),seiser(b)
-        print('loos')
-    elif ch1 == 2:
-        paper(a),paper(b)
-        print('tie')
-    else:
-        paper(a),stone(b)
-        print('win')
-if ch2 == 3:
-    if ch1 == 1:
-        seiser(a),stone(b)
-        print('loos')
-    elif ch1 == 3:
-        seiser(a),seiser(b)
-        print('tie')
-    else:
-        seiser(a),paper(b)
-        print('win')
+        if ch1-ch2 == 1:
+            com += 1
+            print("loos")
+        else:
+            hum += 1
+            print("win")
 
+if hum == com:
+    print("\nGame tied")
+elif hum > com:
+    print("\nYou finally won")
+else:
+    print("\nfinally Computer  wins")
 turtle.done()
