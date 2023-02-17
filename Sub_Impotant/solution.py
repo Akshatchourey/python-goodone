@@ -1,5 +1,6 @@
 #print sum,division,product,diffrence,modof two numbers
-def x():
+
+def allOperator():
     sum=a+b
     print("the sum =", sum)
     substract=a-b
@@ -13,18 +14,18 @@ def x():
     exponent=a**b
     print("the exponent =",exponent)
     solution=sum+substract+division+floordivision+exponent+modulus
-    print("the solution =",solution)
+    print("the solution = ",solution)
     print("The solution is the choureys golden solution")
 
-    print("data type of solution is",type(soluti))
+    # print("data type of solution is",type(soluti))
 
 
 
 
 #more easier way.
 
-a=int(input("Enter thevalue of a=no or complax no."))
-b=int(input("Enter thevalue of b=no or complax no."))
+a=int(input("Enter the value of a = N/R/complax no."))
+b=int(input("Enter the value of b = N/R/complax no."))
 ope=(input("enter the operator.+,-,*,/,%,**,//,>,<,.>=,<="))
 if(ope=="+"):
     print("addtion is=",a+b)
@@ -49,11 +50,15 @@ elif(ope=="<="):
 else:
     print("pawer is=",a**b)
 
-d=input("you want an atomatic result of all the posible value of A and B enter x")
-if(d==x):
-    print("sd")
-x()
-input("Press enter to exit.")    
+d = input("you want an atomatic result of all the posible value of A and B enter y :")
+
+if(d == "y"):
+    print("Your ans sir.")
+    allOperator(
+)
+
+
+a = input("Press enter to exit.")  
 
 
 
