@@ -64,12 +64,3 @@ print ("thankyu for shoping.")
 print("\nGrandTotle = ",first_b,"Rs/-")
 
 a=input("enter to exit")
-
-
-
-
-
-
-
-
-

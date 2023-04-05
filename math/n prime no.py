@@ -1,3 +1,5 @@
+# 25,000Th prime no = 287117.00
+
 """
 seq=[]
 asq=[1]
@@ -25,6 +27,7 @@ print("thx")
 
 
 num = int(input("input the no."))
+c = 287118 #to continew from 21,000
 c = 2
 while num != 0:
     for i in range(2, c):
@@ -42,7 +45,7 @@ while(y==0):
      for x in range(1,s+1):
          if(s%x==0):
              print(x)
-     y=bool(input("do you want to reechack in not press enter."))
+     y=bool(input("do you want to reechack if not press enter."))
 
 print("thx")
 print("Have a nice day.")

@@ -187,17 +187,3 @@ for i in range(60):
     a.end_fill()
              
 turtle.done()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
