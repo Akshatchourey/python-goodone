@@ -17,8 +17,6 @@ if(y%4==0):
         b+=1
         if(b>m):
             break    
-print(a)
-
 
 
 x=(y-1)%400
@@ -36,7 +34,7 @@ elif(x<400):
     u=(x-300-fi)+2*fi+d+a+1
 day=u%7
 
-seq=['mon','thus','wend','thirs','fri','sater','sanday']
+seq=['2 Monday','3 Tuesday','4 Wednesday','5 Thursday','6 Friday','7 Saturday','1 Sunday']
 print(seq[day-1])
 input("Enter to exit")
 

@@ -1,0 +1,99 @@
+Q--->
+1. Which one is better clone, create new - add remote and then pull all, foke ?? 
+pull = fetch + merge
+
+Set configuration values for your username and email
+git config --global user.name YOUR NAME
+git config --global user.email YOUR EMAIL
+
+Set default branch to master
+git config --global init.default branch master
+
+git config --global alias.st 'status'
+git config --global alias.unstage 'restore --staged'
+git config --global alias.lastfull 'log -p' *gives full commit ex:- lastfull -1
+
+Check the state of the working directory and the staging area
+git status
+
+Get help on a command
+git help COMMAND
+git COMMAND -h
+
+Initialize a new git repository
+git init
+
+Add a file to the staging area
+git add FILE
+
+Add all file changes to the staging area
+git add --all
+git add -A
+git add .
+
+Commit the staged changes
+git commit -m "MESSAGE"
+git commit -m "~~~~~" --amend
+git commit -a -m "~~~" (BRANCH_NAME) *Commit to a specific branch
+
+List the commit history
+git help log
+git log  *for last log just commit:- log -1
+git log --oneline
+git reflog
+git show
+
+Create a new branch
+git branch BRANCH NAME
+
+List all the local branches
+git branch
+
+Delete a local branch
+git branch -d or -D BRANCH NAME 
+ *d == --delete and D == --delete -- force
+
+Delete a remote branch
+git push (REMOTE_NAME) --delete (BRANCH_NAME)
+git push (REMOTE_NAME):(BRANCH_NAME)
+git branch -rd BRANCH NAME 
+
+Switch to another branch
+git switch BRANCH NAME
+git checkout BRANCH NAME
+
+Merge specified branch into the current branch
+git merge BRANCH NAME
+git merge -m "~~~" (BRANCH_NAME) *Merge with message
+
+Create a connection to a remote repository
+git remote add (Remote_NAME(origin)) (REPOSITORY URL)
+
+Push the committed changes to a remote directory
+git push (REMOTE) (BRANCH)
+
+Download the content from a remote repository
+git pull (REMOTE) (BRANCH)
+
+---------------------------------------------------------------------------
+
+Clone a repository
+git clone REPOSITORY URL
+
+Check the unstaged changes
+git diff
+
+Reset staging area to the last commit
+git reset
+
+Remove a file from the index and working directory
+git rm FILENAME
+
+Rename a file
+git mv (OLD NAME) (NEW NAME)
+
+Rename the current branch
+git branch -m NEW BRANCH NAME
+
+Creating new ignore file
+touch .gitignore
