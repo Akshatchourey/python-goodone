@@ -1,3 +1,6 @@
 __pycache__
 chromedriver.exe
 *.idea
+*.mp4
+*.mp3
+*.wav
