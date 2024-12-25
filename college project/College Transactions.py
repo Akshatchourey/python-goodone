@@ -10,15 +10,17 @@ class App(tk.Tk):
     def __init__(self):
         super().__init__()
         self.title("College Transactions")
-        # self.iconbitmap("logo.ico")
-        self.geometry("935x615+175+90")
+        self.iconbitmap("logo.ico")
+        self.geometry("990x615+175+90")
         self.minsize(900,550)
         self.bind('<Escape>', lambda event: self.quit())
 
+        style = ttk.Style()
+        style.configure("TButton",font=('', 11), width=20)
         menu = ttk.Frame(self, borderwidth=4)
         menu.pack(side='left', fill='y')
 
-        title = ttk.Label(menu, text="College Transactions", font="comic 12 bold")
+        title = ttk.Label(menu, text="College Transactions", font="Helvetica 15 bold")
         home = ttk.Button(menu, text="Home Page", command=lambda: self.show_frame(HomePage))
         add = ttk.Button(menu, text="Data Page", command=lambda: self.show_frame(Add))
         analyse = ttk.Button(menu, text="Analysis Page", command=lambda: self.show_frame(Analyse))

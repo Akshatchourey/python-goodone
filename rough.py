@@ -30,3 +30,13 @@ def helper(str):
 for j in range(n):
     helper(str(input()))
 
+
+ans = 0
+arr = [10,7,2,8,3]
+for i in range(0, len(arr)):
+    a = arr[i]
+    for j in range(i+1, len(arr)):
+        x = a & arr[j]
+        if x and (not (x & (x - 1))): ans += 1
+
+print(ans)

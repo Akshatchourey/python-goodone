@@ -43,11 +43,17 @@ git log --oneline
 git reflog
 git show
 
+Check Existing remote remotes
+git remote -v
+
 Create a new branch
 git branch BRANCH NAME
 
 List all the local branches
 git branch
+
+List all remote branches with last commit
+git branch -r -v
 
 Delete a local branch
 git branch -d or -D BRANCH NAME 
